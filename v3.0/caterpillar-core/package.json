@@ -8,7 +8,9 @@
     "test": "mocha ./tests/out/test.js",
     "compile": "node ./node_modules/typescript/bin/tsc -p ./src",
     "compiletests": "node ./node_modules/typescript/bin/tsc -p ./tests",
-    "antlr4ts": "antlr4ts -o ./src/models/dynamic_binding  -visitor ./src/models/dynamic_binding/binding_grammar.g4"
+    "antlr4ts": "antlr4ts -o ./src/models/dynamic_binding  -visitor ./src/models/dynamic_binding/binding_grammar.g4",
+    "ganache-cli": "ganache-cli",
+    "gulp": "gulp"
   },
   "dependencies": {
     "antlr4": "^4.7.1",
@@ -57,5 +59,8 @@
     "nodemon": "^1.11.0",
     "typescript": "^2.6.2",
     "xml2js": "^0.4.19"
+  }, 
+  "overrides": {
+    "graceful-fs": "^4.2.10"
   }
 }

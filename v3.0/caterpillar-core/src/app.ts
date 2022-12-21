@@ -33,8 +33,7 @@ if (app.get('env') === 'development') {
 
   app.use((error: any, req, res, next) => {
     console.log(error);
-    res.status(error['status'] || 500);
-    res.render('error', {
+    res.status(error['status'] || 500).json({
       message: error.message,
       error
     });
@@ -44,8 +43,7 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use((error: any, req, res, next) => {
-  res.status(error['status'] || 500);
-  res.render('error', {
+  res.status(error['status'] || 500).json({
     message: error.message,
     error: {}
   });
